@@ -9,6 +9,13 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
+  // Allow Cross origin on api functions
+  app.get('/api', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+  });  
+  
   app.use('/api/things', require('./api/thing'));
   app.use('/api/game', require('./api/game'));
     
