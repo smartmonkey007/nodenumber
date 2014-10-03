@@ -19,12 +19,17 @@ exports.index = function(req, res) {
 };
 
 exports.play = function(req, res) {
-  res.json({message:"would you like to play a game."});
+  res.json({message:"would you like to play a game with me."});
 };
 
 exports.listGames = function (req, res) {
-    var games = {games: 
-                 [{game: "Game1"},
-                  {game: "Game2"}];
-res.json(games);av czq
+    var games = {
+        games: [{
+                game: "Game1"},
+                {
+                    game: "Game2"
+                }]
+            };
+    
+    res.json(games);
 }
