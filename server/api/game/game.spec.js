@@ -14,7 +14,7 @@ describe('GET /api/game', function() {
       .expect('Content-Type', /json/)
       .end(function(err, res) {
         if (err) return done(err);
-            expect(res.body).to.not.be.instanceof(Array);
+            res.body.should.be.instanceof(Array);
         done();
       });
   });
